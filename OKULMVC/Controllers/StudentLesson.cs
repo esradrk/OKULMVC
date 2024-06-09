@@ -35,7 +35,6 @@ namespace OKULMVC.Controllers
         {
             using (var ctx = new OkulDbcontext())
             {
-                // Öğrencinin bu dersi daha önce alıp almadığını kontrol et
                 bool dersZatenAtanmis = ctx.StudentCourses
                     .Any(sc => sc.Ogrenciid == ogrenciId && sc.Dersid == dersId);
 
