@@ -1,0 +1,34 @@
+﻿@model List<OKULMVC.Models.DersOgrenci>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Öğrenci Ders Atama Listesi</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Öğrenci Adı</th>
+            <th>Ders Adı</th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model != null)
+        {
+            foreach (var dersOgrenci in Model)
+            {
+                <tr>
+                    <td>@(dersOgrenci.Student.Ad) @(dersOgrenci.Student.Soyad)</td>
+                    <td>@(dersOgrenci.Course.Dersad)</td>
+                </tr>
+            }
+        }
+        else
+        {
+            <tr>
+                <td colspan="2">Veri bulunamadı</td>
+            </tr>
+        }
+    </tbody>
+</table>

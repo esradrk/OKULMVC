@@ -1,0 +1,39 @@
+﻿@model OKULMVC.Models.DersOgrenci
+
+@{
+    ViewData["Title"] = "Ders Atama";
+}
+
+<h1>Ders Atama</h1>
+
+@if (ViewBag.ErrorMessage != null)
+{
+    <div class="alert alert-danger">@ViewBag.ErrorMessage</div>
+}
+
+<form asp-action="Dersatama" method="post">
+     <div class="form-group">
+        <label for="ogrenciId">Öğrenci</label>
+      <select id="ogrenciId" name="ogrenciId" class="form-control">
+            <option>Ders Seçiniz</option>
+
+            @foreach (var ogrenci in ViewBag.Ogrenciler)
+            {
+                <option value="@ogrenci.Ogrenciid">@ogrenci.Ad @ogrenci.Soyad</option>
+            }
+        </select> 
+    </div> 
+    <div class="form-group">
+        <label for="dersId">Ders</label>
+        <select id="dersId" name="dersId" class="form-control">
+            <option>Ders Seçiniz</option>
+
+            @foreach (var ders in ViewBag.Dersler)
+            {
+
+                <option value="@ders.Dersid">@ders.Dersad</option>
+            }
+        </select>
+    </div>
+    <button type="submit" class="btn btn-primary">Ata</button>
+</form>
