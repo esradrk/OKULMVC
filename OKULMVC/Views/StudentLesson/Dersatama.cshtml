@@ -6,16 +6,11 @@
 
 <h1>Ders Atama</h1>
 
-@if (ViewBag.ErrorMessage != null)
-{
-    <div class="alert alert-danger">@ViewBag.ErrorMessage</div>
-}
-
 <form asp-action="Dersatama" method="post">
      <div class="form-group">
         <label for="ogrenciId">Öğrenci</label>
       <select id="ogrenciId" name="ogrenciId" class="form-control">
-            <option>Ders Seçiniz</option>
+            <option>Öğrenci Seçiniz</option>
 
             @foreach (var ogrenci in ViewBag.Ogrenciler)
             {
